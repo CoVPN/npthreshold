@@ -1,0 +1,7 @@
+year <- sub("-.*", "", meta$Date)
+
+bibentry(bibtype="manual",
+         title = "copcor: Functions for Correlates of Protection and Correlates of Risk",
+         author = c(as.person("SCHARP")),
+         year = year,
+         url = "https://CRAN.R-project.org/package=copcor")
