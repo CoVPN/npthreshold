@@ -31,11 +31,14 @@ thresholdTMLE <- function(data_full, node_list, thresholds = NULL, biased_sampli
     if(any(is.na(data_full[[node_list[["weights"]]]]))) {
       warning("NA values found in weights. Dropping samples with NA chosen in biased sample.")
     }
+    print("beging 1")
     if(!is.null(biased_sampling_indicator)) {
       data_full <- data_full[!(data_full[[biased_sampling_indicator]]==1 & is.na(data_full[[node_list[["weights"]]]]))]
+      print("beging 2")
       
     } else {
       data_full <- data_full[!( is.na(data_full[[node_list[["weights"]]]]))]
+      print("beging 3")
       
     }
   }
