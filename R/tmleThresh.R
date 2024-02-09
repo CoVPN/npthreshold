@@ -33,7 +33,13 @@ thresholdTMLE <- function(data_full, node_list, thresholds = NULL, biased_sampli
     }
     print("beging 1")
     if(!is.null(biased_sampling_indicator)) {
-      data_full <- data_full[!(data_full[[biased_sampling_indicator]]==1 & is.na(data_full[[node_list[["weights"]]]]))]
+      str(data_full[[biased_sampling_indicator]])
+      str(data_full[[node_list[["weights"]]]])
+      tmp=!(data_full[[biased_sampling_indicator]]==1 & is.na(data_full[[node_list[["weights"]]]]))
+      str(tmp)
+      data_full <- data_full[tmp,]
+      print("the above works")
+      data_full <- data_full[tmp]
       print("beging 2")
       
     } else {
