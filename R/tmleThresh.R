@@ -39,7 +39,11 @@ thresholdTMLE <- function(data_full, node_list, thresholds = NULL, biased_sampli
       
     }
   }
-  data_full <- data_full[,union(unlist(node_list),c( biased_sampling_strata, biased_sampling_indicator)),with = F]
+  
+  tmp = union(unlist(node_list),c( biased_sampling_strata, biased_sampling_indicator))
+  print(tmp)
+  data_full <- data_full[,tmp,with = F]
+  print("after")
   data_full$id <- seq_len(nrow(data_full))
   if (!is.null(biased_sampling_indicator)) {
     data <- data_full[data_full[[biased_sampling_indicator]] == 1]
