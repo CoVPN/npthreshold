@@ -31,29 +31,15 @@ thresholdTMLE <- function(data_full, node_list, thresholds = NULL, biased_sampli
     if(any(is.na(data_full[[node_list[["weights"]]]]))) {
       warning("NA values found in weights. Dropping samples with NA chosen in biased sample.")
     }
-    print("beging 1")
     if(!is.null(biased_sampling_indicator)) {
-      str(data_full[[biased_sampling_indicator]])
-      str(data_full[[node_list[["weights"]]]])
-      tmp=!(data_full[[biased_sampling_indicator]]==1 & is.na(data_full[[node_list[["weights"]]]]))
-      str(tmp)
-      data_full <- data_full[tmp,]
-      str(data_full)
-      print("the above works")
-      data_full <- data_full[tmp]
-      print("beging 2")
+      data_full <- data_full[!(data_full[[biased_sampling_indicator]]==1 & is.na(data_full[[node_list[["weights"]]]]))]
       
     } else {
       data_full <- data_full[!( is.na(data_full[[node_list[["weights"]]]]))]
-      print("beging 3")
       
     }
   }
-  
-  tmp = union(unlist(node_list),c( biased_sampling_strata, biased_sampling_indicator))
-  print(tmp)
-  data_full <- data_full[,tmp,with = F]
-  print("after")
+  data_full <- data_full[,union(unlist(node_list),c( biased_sampling_strata, biased_sampling_indicator)),with = F]
   data_full$id <- seq_len(nrow(data_full))
   if (!is.null(biased_sampling_indicator)) {
     data <- data_full[data_full[[biased_sampling_indicator]] == 1]
