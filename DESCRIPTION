@@ -3,7 +3,7 @@ LazyLoad: yes
 Version: 2024.2-7
 Title: Nonparametric estimation of the causal effect of a stochastic threshold-based intervention
 Authors@R: c(person("Lars", "van der Laan", role = "cre", email = "lvdlaan@uw.edu"), person("Youyi", "Fong", role = "aut", email = "yfong@fhcrc.org"), person("Peter", "Gilbert", role = "aut", email = "pgilbert@fredhutch.org"))
-Depends: R (>= 3.6), kyotil
+Depends: R (>= 3.6), kyotil, sl3, SuperLearner, data.table, mvtnorm
 Imports: methods, survival, assertthat
 Suggests: RUnit
 Description: Implements a nonparametric efficient estimator for the covariate-adjusted threshold-response function for the case of informative outcome missingness, which utilizes machine learning and targeted minimum-loss estimation (TMLE), as described in van der Laan, Zhang, and Gilbert (2023) <DOI:10.1111/biom.13690>
