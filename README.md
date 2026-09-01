@@ -1,6 +1,10 @@
 # Non-parametric estimation of the covariate-adjusted threshold-response function
 
-This package implements the non-parametric estimation of the covariate-adjusted threshold-response function. More information about these methods is provided in the [published paper](https://academic.oup.com/biometrics/article/79/2/1014/7513933).
+This package implements the non-parametric estimation of the covariate-adjusted threshold-response function. More information about these methods is provided in the [published paper](https://academic.oup.com/biometrics/article/79/2/1014/7513933). 
+
+Developed by 
+* -2024/8 Lars van der Laan
+* 2024/8-2026/8 James Peng (also see https://github.com/jpspeng/npthreshold)
 
 ## Install
 
