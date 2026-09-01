@@ -8,7 +8,11 @@ Developed by
 
 ## Install
 
+Tested on R 4.4.0
+
 ```r
+devtools::install_github("tlverse/sl3")
+devtools::install_github("tlverse/tmle3")
 devtools::install_github("CoVPN/npthreshold")
 ```
 
