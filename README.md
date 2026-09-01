@@ -9,7 +9,7 @@ Developed by
 ## Install
 
 ```r
-devtools::install_github("jpspeng/npthreshold")
+devtools::install_github("CoVPN/npthreshold")
 ```
 
 ## Using the package 
